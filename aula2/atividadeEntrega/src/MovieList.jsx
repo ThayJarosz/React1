@@ -1,8 +1,6 @@
-import MovieCard from "./MovieCard"
+import MovieCard from "./MovieCard";
 
 function MovieList({ movies }) {
-
-
     return (
         <div className="movie-list">
             {movies.map(movie => (
@@ -13,10 +11,11 @@ function MovieList({ movies }) {
                     genre={movie.genre}
                     releaseYear={movie.releaseYear}
                     rating={movie.rating}
+                    image={movie.image}
                 />
             ))}
         </div>
     )
 }
 
-export default MovieList
+export default MovieList;

@@ -1,10 +1,8 @@
-
-function MovieCard({ id, title, genre, releaseYear, rating }) {
-
-
+function MovieCard({ id, title, genre, releaseYear, rating, image }) {
     return (
         <div id={id} className="movie-card">
             <h2>{title}</h2>
+            <img src={image} alt={title} className="movie-image" />
             <p>Gênero: {genre}</p>
             <p>Ano de lançamento: {releaseYear}</p>
             <p>Avaliação: {rating}</p>
@@ -12,4 +10,4 @@ function MovieCard({ id, title, genre, releaseYear, rating }) {
     )
 }
 
-export default MovieCard
+export default MovieCard;
