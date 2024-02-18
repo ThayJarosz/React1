@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { addGame } from '../services/gameService';
 import NavBar from './NavBar';
+import { useNavigate } from 'react-router-dom';
 
 function GameForm() {
+  const navigate = useNavigate();
   const [gameData, setGameData] = useState({
     name: '',
     category: '',
     url: '',
     demoVideoUrl: '',
     description: '',
-    imageUrl: ''
+    imageUrl: '',
+    user: localStorage.getItem('currentUser'),
   });
 
   const handleChange = (e) => {
@@ -23,15 +26,7 @@ function GameForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addGame(gameData);
-    // Limpar o formulário após o envio
-    setGameData({
-      name: '',
-      category: '',
-      url: '',
-      demoVideoUrl: '',
-      description: '',
-      imageUrl: ''
-    });
+    navigate('/');
   };
 
   return (
@@ -44,20 +39,32 @@ function GameForm() {
           <input type="text" name="name" value={gameData.name} onChange={handleChange} required />
         </label>
         <label>
+          Descrição:
+          <input type="text" name="description" value={gameData.description} onChange={handleChange} required maxLength={280}/>
+        </label>
+        <label>
           Categoria:
           <select name="category" value={gameData.category} onChange={handleChange} required>
             <option value="">Selecione uma categoria</option>
             <option value="Strategy">Strategy</option>
             <option value="Shooter">Shooter</option>
             <option value="Puzzle">Puzzle</option>
-            {/* Adicione mais opções de categoria conforme necessário */}
           </select>
         </label>
         <label>
           URL de Acesso:
           <input type="url" name="url" value={gameData.url} onChange={handleChange} required />
         </label>
-        {/* Adicione os outros campos necessários (demoVideoUrl, description, imageUrl) aqui */}
+
+        <label>
+          URL Vídeo:
+          <input type="url" name="demoVideoUrl" value={gameData.demoVideoUrl} onChange={handleChange}/>
+        </label>
+
+        <label>
+          URL Imagem:
+          <input type="url" name="imageUrl" value={gameData.imageUrl} onChange={handleChange}/>
+        </label>
         <button type="submit">Cadastrar Jogo</button>
       </form>
     </div>

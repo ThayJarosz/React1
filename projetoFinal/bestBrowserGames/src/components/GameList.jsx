@@ -12,10 +12,10 @@ function GameList({ games, onEdit, onDelete }) {
     }
   };
 
-  const handleDelete = (gameId) => {
+  const  handleDelete = async (gameId) => {
     // Implemente a lógica para excluir um jogo com o ID fornecido
     console.log('Excluindo jogo com ID:', gameId);
-    deleteGame(gameId)
+    await deleteGame(gameId)
       .then((deletedGame) => {
         // Atualize o estado para refletir a exclusão do jogo
         if (onDelete) {
