@@ -20,10 +20,6 @@ function GameItem({ game, onEdit, onDelete }) {
     <div>
       <h3>{game.name}</h3>
       <p>Categoria: {game.category}</p>
-      
-      <Link to={`/game-details/${game.id}`} key={game.id}>
-        Detalhes
-        </Link>
       <button onClick={handleEditClick}>Editar</button>
       <button onClick={handleDeleteClick}>Excluir</button>
     </div>

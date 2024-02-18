@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import GameList from '../components/GameList';
 import { getGames } from '../services/gameService';
+import NavBar from '../components/NavBar';
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -30,9 +31,8 @@ function Home() {
 
   return (
     <div>
+      <NavBar />
       <h1>Best Browser Games</h1>
-      <Link to="/profile">Perfil</Link> {/* Link para a página de perfil */}
-      <Link to="/game-form">Cadastrar Novo Jogo</Link> {/* Link para o formulário de cadastro de jogos */}
       <div>
         <input
           type="text"

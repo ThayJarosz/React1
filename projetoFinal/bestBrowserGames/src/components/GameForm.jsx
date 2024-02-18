@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { addGame } from '../services/gameService';
+import NavBar from './NavBar';
 
 function GameForm() {
   const [gameData, setGameData] = useState({
@@ -35,6 +36,7 @@ function GameForm() {
 
   return (
     <div>
+      <NavBar />
       <h2>Cadastro de Browser Game</h2>
       <form onSubmit={handleSubmit}>
         <label>

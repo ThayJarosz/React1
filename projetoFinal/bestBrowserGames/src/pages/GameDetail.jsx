@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getGameById, saveGameReview, updateGameReview } from '../services/gameService';
+import NavBar from '../components/NavBar';
 
 function GameDetails() {
   const { id } = useParams();
@@ -65,6 +66,7 @@ function GameDetails() {
 
   return (
     <div>
+      <NavBar />
       {game && (
         <div>
           <h2>{game.name}</h2>

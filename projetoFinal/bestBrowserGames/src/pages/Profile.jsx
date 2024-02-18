@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers, updateUser } from '../services/userService';
+import NavBar from '../components/NavBar';
 
 function Profile() {
   // Estado para armazenar os dados do usuário atual
@@ -47,6 +48,8 @@ function Profile() {
 
   return (
     <div>
+      
+      <NavBar />
       <h2>Profile</h2>
       {userData && (
         <div>

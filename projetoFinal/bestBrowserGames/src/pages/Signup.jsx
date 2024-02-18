@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { addUser } from '../services/userService';
+import { useNavigate } from 'react-router-dom'; 
 
 function Signup() {
+  const navigate = useNavigate();
   // Estado para armazenar os dados do formulário de cadastro
   const [formData, setFormData] = useState({
     fullName: '',
@@ -34,6 +36,7 @@ function Signup() {
       state: '',
       country: ''
     });
+    navigate('/login');
   };
 
   return (
