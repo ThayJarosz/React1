@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import GameList from '../components/GameList';
 import { getGames } from '../services/gameService';
 import NavBar from '../components/NavBar';
@@ -10,7 +9,6 @@ function Home() {
   const [searchCategory, setSearchCategory] = useState('');
 
   useEffect(() => {
-    // Fetch games from backend when component mounts
     getGames().then((data) => setGames(data));
   }, []);
 

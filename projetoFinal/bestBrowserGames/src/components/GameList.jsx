@@ -12,7 +12,7 @@ function GameList({ games, onEdit, onDelete }) {
     }
   };
 
-  const  handleDelete = async (gameId) => {
+  const handleDelete = async (gameId) => {
     // Implemente a lógica para excluir um jogo com o ID fornecido
     console.log('Excluindo jogo com ID:', gameId);
     await deleteGame(gameId)
@@ -32,9 +32,11 @@ function GameList({ games, onEdit, onDelete }) {
   return (
     <div>
       <h2>Games</h2>
-      {games.map((game) => (
+      <div className='container'>
+        {games.map((game) => (
           <GameItem key={game.id} game={game} onEdit={() => handleEdit(game.id)} onDelete={() => handleDelete(game.id)} />
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

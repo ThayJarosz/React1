@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '../services/authService'; // Implemente essa função no seu serviço de autenticação
+import { loginUser } from '../services/authService'; 
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -21,7 +21,6 @@ function Login() {
       navigate('/');
     } catch (error) {
       console.error('Erro ao fazer login:', error);
-      // Trate o erro de login, exiba uma mensagem para o usuário, etc.
     }
   };
 

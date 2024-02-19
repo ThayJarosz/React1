@@ -46,9 +46,11 @@ function GameForm() {
           Categoria:
           <select name="category" value={gameData.category} onChange={handleChange} required>
             <option value="">Selecione uma categoria</option>
-            <option value="Strategy">Strategy</option>
-            <option value="Shooter">Shooter</option>
-            <option value="Puzzle">Puzzle</option>
+            <option value="Strategy">Estratégia</option>
+            <option value="Shooter">Jogo de tiros</option>
+            <option value="Puzzle">Quebra-cabeça</option>
+            <option value="Rpg">RPG (Role-Playing Games)</option>
+            <option value="Simulation">Simulação</option>
           </select>
         </label>
         <label>

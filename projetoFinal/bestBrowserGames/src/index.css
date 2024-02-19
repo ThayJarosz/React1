@@ -94,6 +94,10 @@ select {
   color: #555; /* Cor do texto */
 }
 
+.container {
+  display: flex;
+}
+
 /* Estilo para formulários */
 form {
   margin-bottom: 20px;
