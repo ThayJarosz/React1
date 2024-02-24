@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getGameById, updateGame } from '../services/gameService';
+import { useNavigate } from 'react-router-dom';
 
 function GameEditForm({ onSave, onCancel }) {
+  const navigate = useNavigate();
   const [editedGame, setEditedGame] = useState({
     id: '',
     name: '',
@@ -47,42 +49,43 @@ function GameEditForm({ onSave, onCancel }) {
     } catch (error) {
       console.error('Erro ao salvar o jogo:', error);
     }
+    navigate('/');
   };
 
   const handleCancel = () => {
-    //onCancel();
+    navigate('/');
   };
 
   return (
     <div>
-      <h2>Edit Game</h2>
+      <h2>Editar Game</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
+          Nome:
           <input type="text" name="name" value={editedGame.name} onChange={handleChange} required />
         </label>
         <label>
-          Category:
+          Categoria:
           <input type="text" name="category" value={editedGame.category} onChange={handleChange} required />
         </label>
         <label>
-          URL:
+          URL de Acesso:
           <input type="text" name="url" value={editedGame.url} onChange={handleChange} required />
         </label>
         <label>
-          Demo Video URL:
+          URL Vídeo:
           <input type="text" name="demoVideoUrl" value={editedGame.demoVideoUrl} onChange={handleChange} />
         </label>
         <label>
-          Description:
+          Descrição:
           <textarea name="description" value={editedGame.description} onChange={handleChange} required />
         </label>
         <label>
-          Image URL:
+          URL Imagem:
           <input type="text" name="imageUrl" value={editedGame.imageUrl} onChange={handleChange} required />
         </label>
-        <button type="submit">Save</button>
-        <button type="button" onClick={handleCancel}>Cancel</button>
+        <button type="submit">Salvar</button>
+        <button type="button" onClick={handleCancel}>Cancelar</button>
       </form>
     </div>
   );

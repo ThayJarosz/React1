@@ -1,10 +1,10 @@
 // authService.js
 
-import { getUsers } from '../services/userService';
+import { getUsers } from '../services/userService'; // Importa a função 'getUsers' do serviço 'userService' para obter os usuários
 
 // Função para realizar o login do usuário
 export const loginUser = async (email, password) => {
-  const users = getUsers();
+  const users = getUsers(); // Obtém a lista de usuários
   
   // Verifica se existe algum usuário com o e-mail fornecido
   const user = users.find(user => user.email === email);
@@ -21,7 +21,7 @@ export const loginUser = async (email, password) => {
 
   // Se as credenciais estiverem corretas, salva o estado de autenticação do usuário no localStorage
   localStorage.setItem('isAuthenticated', 'true');
-  return user;
+  return user; // Retorna o usuário autenticado
 };
 
 // Função para verificar se o usuário está autenticado

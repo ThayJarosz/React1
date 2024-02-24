@@ -6,13 +6,11 @@ function GameItem({ game, onEdit, onDelete }) {
   const isUser = game.user == localStorage.getItem('currentUser');
 
   const handleEditClick = () => {
-    // Chama a função onEdit passando o ID do jogo como argumento
     onEdit(game.id);
     navigate(`/game-edit-form/${game.id}`);
   };
 
   const handleDeleteClick = async () => {
-    // Chama a função onDelete passando o ID do jogo como argumento
     await onDelete(game.id);
     navigate(0);
   };

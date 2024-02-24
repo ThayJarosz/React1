@@ -1,58 +1,59 @@
 /* Estilo global */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8; /* Cor de fundo geral */
-  margin: 0; /* Remover margem padrão do corpo */
-  padding: 0; /* Remover preenchimento padrão do corpo */
+  background-color: #f8f8f8; 
+  margin: 0; 
+  padding: 0;
 }
 
 /* Estilo para contêineres */
 .App {
   max-width: 800px;
-  margin: 20px auto; /* Centralizar e adicionar espaço superior e inferior */
+  margin: 20px auto; 
   padding: 20px;
-  background-color: #fff; /* Cor de fundo dos contêineres */
-  border-radius: 10px; /* Borda arredondada */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  background-color: #fff;
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para botões */
 button {
   padding: 10px 20px;
-  background-color: #ffa500; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
+  background-color: #ffa500;
+  color: #fff;
   border: none;
-  border-radius: 5px; /* Borda arredondada */
+  border-radius: 5px; 
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Transição suave */
-  margin-right: 10px; /* Adicionar espaço à direita de todos os botões */
+  transition: background-color 0.3s ease;
+  margin-right: 10px; 
 }
 
 button:last-child {
-  margin-right: 0; /* Remover espaço à direita do último botão */
+  margin-right: 0;
 }
 
 .GameItem button.delete {
-  margin-right: 0; /* Remover margem à direita para criar um espaço entre os botões */
+  margin-right: 0;
 }
 
 .GameItem button:hover {
-  background-color: #ff8c00; /* Cor de fundo do botão ao passar o mouse */
+  background-color: #ff8c00;
 }
 
 button:hover {
-  background-color: #ff8c00; /* Cor de fundo do botão ao passar o mouse */
+  background-color: #ff8c00; 
 }
 
 /* Estilo para links */
 a {
-  color: #ffa500; /* Cor dos links */
+  color: #ffa500; 
   text-decoration: none;
-  transition: color 0.3s ease; /* Transição suave */
+  transition: color 0.3s ease; 
 }
 
 a:hover {
-  color: #ff8c00; /* Cor dos links ao passar o mouse */
+  color: #ff8c00; 
 }
 
 /* Estilo para campos de entrada */
@@ -63,8 +64,23 @@ textarea {
   padding: 10px;
   width: calc(100% - 20px);
   margin-bottom: 10px;
-  border: 1px solid #ffa500; /* Cor da borda */
-  border-radius: 5px; /* Borda arredondada */
+  border: 1px solid #ffa500; 
+  border-radius: 5px; 
+}
+
+/* Estilo para campos de URL */
+input[type="url"] {
+  padding: 10px;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  border: 1px solid #ffa500; 
+  border-radius: 5px; 
+}
+
+
+label.url-input {
+  display: block;
+  margin-bottom: 10px; 
 }
 
 /* Estilo para seletores */
@@ -72,30 +88,37 @@ select {
   padding: 10px;
   width: calc(100% - 20px);
   margin-bottom: 10px;
-  border: 1px solid #ffa500; /* Cor da borda */
-  border-radius: 5px; /* Borda arredondada */
-  background-color: #fff; /* Cor de fundo */
+  border: 1px solid #ffa500; 
+  border-radius: 5px; 
+  background-color: #fff; 
 }
 
 /* Estilo para card de jogo */
 .GameItem {
   padding: 20px;
-  background-color: #fff; /* Cor de fundo */
-  border-radius: 10px; /* Borda arredondada */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  background-color: #fff; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   margin-bottom: 20px;
 }
 
 .GameItem h3 {
-  color: #ffa500; /* Cor do título */
+  color: #ffa500; 
 }
 
 .GameItem p {
-  color: #555; /* Cor do texto */
+  color: #555; 
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  gap: 20px; 
+}
+
+.game-card {
+  flex-basis: calc(33.33% - 20px); 
 }
 
 /* Estilo para formulários */
@@ -103,46 +126,29 @@ form {
   margin-bottom: 20px;
 }
 
-/* Estilo para a seção de detalhes do jogo */
-.GameDetails {
-  padding: 20px;
-  background-color: #fff; /* Cor de fundo */
-  border-radius: 10px; /* Borda arredondada */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  margin-bottom: 20px;
-}
-
-.GameDetails h2 {
-  color: #ffa500; /* Cor do título */
-}
-
-.GameDetails p {
-  color: #555; /* Cor do texto */
-}
-
-.GameDetails label {
+label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
 }
 
 .GameDetails textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ffa500; /* Cor da borda */
-  border-radius: 5px; /* Borda arredondada */
+  border: 1px solid #ffa500; 
+  border-radius: 5px;
 }
 
 .GameDetails button {
-  background-color: #ffa500; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
-  border-radius: 5px; /* Borda arredondada */
+  background-color: #ffa500; 
+  color: #fff; 
+  border-radius: 5px; 
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Transição suave */
+  transition: background-color 0.3s ease; 
 }
 
 .GameDetails button:hover {
-  background-color: #ff8c00; /* Cor de fundo do botão ao passar o mouse */
+  background-color: #ff8c00; 
 }
 
 .nav-bar {
